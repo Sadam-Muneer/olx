@@ -14,7 +14,7 @@ const ProfileMenu = ({ user, logout }) => {
               localStorage.clear();
               logout();
             }}
-            color="red"
+            color="black"
           >
             Logout
           </Menu.Item>

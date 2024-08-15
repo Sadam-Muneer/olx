@@ -32,7 +32,7 @@ const BasicDetails = ({
     initialValues: {
       title: carDetails.title || "",
       description: carDetails.description || "",
-      price: carDetails.price || 0,
+      price: carDetails.price,
       brand: carDetails.brand || "",
       model: carDetails.model || "",
       listType: carDetails.listType || "",
@@ -65,76 +65,108 @@ const BasicDetails = ({
   return (
     <>
       <form onSubmit={form.onSubmit(handleSubmit)}>
-        <Box w="100%" className="flex justify-center flex-wrap">
-          <TextInput
-            withAsterisk
-            className="mr-4"
-            label="Title"
-            placeholder="Title"
-            {...form.getInputProps("title")}
-          />
-          <TextInput
-            withAsterisk
-            className="mr-4"
-            label="Description"
-            placeholder="Description"
-            {...form.getInputProps("description")}
-          />
-          <TextInput
-            withAsterisk
-            className="mr-4"
-            label="Price"
-            placeholder="Price"
-            type="number"
-            {...form.getInputProps("price")}
-          />
-          <TextInput
-            withAsterisk
-            className="mr-4"
-            label="Brand"
-            placeholder="Brand"
-            {...form.getInputProps("brand")}
-          />
-          <Select
-            withAsterisk
-            className="mr-4"
-            label="Model"
-            placeholder="Select model"
-            data={modelOptions.map((year) => ({
-              value: year.toString(),
-              label: year.toString(),
-            }))}
-            {...form.getInputProps("model")}
-          />
-          <Select
-            withAsterisk
-            className="mr-4"
-            label="List Type"
-            placeholder="Select list type"
-            data={listTypeOptions}
-            {...form.getInputProps("listType")}
-          />
-          <Select
-            withAsterisk
-            className="mr-4"
-            label="Category"
-            placeholder="Select category"
-            data={categoryOptions}
-            {...form.getInputProps("category")}
-          />
-          <TextInput
-            withAsterisk
-            className="mr-4"
-            label="Additional Info"
-            placeholder="Additional Info"
-            {...form.getInputProps("additionalInfo")}
-          />
+        <Box className="w-full flex flex-col lg:flex-row gap-4">
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Title"
+              placeholder="Title"
+              {...form.getInputProps("title")}
+            />
+          </Box>
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Description"
+              placeholder="Description"
+              {...form.getInputProps("description")}
+            />
+          </Box>
         </Box>
-        <Group position="right" mt="md">
-          <Button type="button" onClick={prevStep}>
+
+        <Box className="w-full flex flex-col lg:flex-row gap-4">
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Price"
+              placeholder="Price"
+              type="number"
+              {...form.getInputProps("price")}
+            />
+          </Box>
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Brand"
+              placeholder="Brand"
+              {...form.getInputProps("brand")}
+            />
+          </Box>
+        </Box>
+
+        <Box className="w-full flex flex-col lg:flex-row gap-4">
+          <Box className="w-full lg:w-1/2">
+            <Select
+              withAsterisk
+              className="w-full mb-4"
+              label="Model"
+              placeholder="Select model"
+              data={modelOptions.map((year) => ({
+                value: year.toString(),
+                label: year.toString(),
+              }))}
+              {...form.getInputProps("model")}
+            />
+          </Box>
+          <Box className="w-full lg:w-1/2">
+            <Select
+              withAsterisk
+              className="w-full mb-4"
+              label="List Type"
+              placeholder="Select list type"
+              data={listTypeOptions}
+              {...form.getInputProps("listType")}
+            />
+          </Box>
+        </Box>
+
+        <Box className="w-full flex flex-col lg:flex-row gap-4">
+          <Box className="w-full lg:w-1/2">
+            <Select
+              withAsterisk
+              className="w-full mb-4"
+              label="Category"
+              placeholder="Select category"
+              data={categoryOptions}
+              {...form.getInputProps("category")}
+            />
+          </Box>
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Warranty in years"
+              placeholder="Warranty "
+              {...form.getInputProps("additionalInfo")}
+            />
+          </Box>
+        </Box>
+
+        <Group position="right" mt="md" className="w-full">
+          <Button
+            type="button"
+            onClick={prevStep}
+            className="bg-black text-white"
+          >
             Back
           </Button>
-          <Button type="submit">Next</Button>
+          <Button type="submit" className="bg-black text-white">
+            Next
+          </Button>
         </Group>
       </form>
       <ToastContainer />

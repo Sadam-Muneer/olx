@@ -19,6 +19,8 @@ const GeoCoderMarker = ({ address }) => {
   const [position, setPosition] = useState([0, 0]); // Default position
 
   useEffect(() => {
+    if (!address) return;
+
     ELG.geocode()
       .text(address)
       .run((err, results) => {
@@ -38,7 +40,7 @@ const GeoCoderMarker = ({ address }) => {
 
   return (
     <Marker position={position} icon={DefaultIcon}>
-      <Popup>{address}</Popup>
+      <Popup>{address || "Location not found"}</Popup>
     </Marker>
   );
 };

@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import "leaflet/dist/leaflet.css";
 
 const Map = ({ address, city, country }) => {
-  const fullAddress = `${address}, ${city}, ${country}`;
+  // Ensure address parts are properly defined
+  const fullAddress = [address, city, country].filter(Boolean).join(", ");
 
   return (
     <div>
@@ -22,9 +23,15 @@ const Map = ({ address, city, country }) => {
 };
 
 Map.propTypes = {
-  address: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
+  address: PropTypes.string,
+  city: PropTypes.string,
+  country: PropTypes.string,
+};
+
+Map.defaultProps = {
+  address: "",
+  city: "",
+  country: "",
 };
 
 export default Map;

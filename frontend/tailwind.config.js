@@ -28,6 +28,9 @@ export default {
       backgroundImage: {
         hero: "url(/src/assets/logomain.jpeg)",
       },
+      fontFamily: {
+        lexend: ["Lexend", "sans-serif"],
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

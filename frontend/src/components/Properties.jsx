@@ -42,15 +42,15 @@ const Properties = () => {
 
   return (
     <section className="max-padd-container">
-      <div className="max-padd-container bg-primary py-16 xl:py-28 rounded-3xl">
-        <span className="medium-18">Find Your Perfect Car!</span>
-        <h2 className="h2">Explore Our Car Listings</h2>
-        <div className="flexBetween mt-8 mb-6">
+      <div className="max-padd-container bg-primary py-16 xl:py-24 rounded-3xl">
+        <span className="medium-16">Find Your Perfect Product!</span>
+        <h2 className="h2">Explore Our Products</h2>
+        <div className="flexBetween mt-4 mb-3">
           <h5>
             <span className="font-bold">
               Showing 1-{cars.length < 6 ? cars.length : 6}:
             </span>
-            Out of {cars.length} Cars
+            Out of {cars.length} Products
           </h5>
           <Link
             to={"/"}

@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Inter:wght@100..900&display=swap");
+@import "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -64,7 +66,7 @@
 
 @layer base {
   .active-link {
-    @apply bg-secondary text-white;
+    @apply bg-black text-white;
   }
 
   .h1 {
@@ -102,10 +104,10 @@
   }
 
   .btn-secondary {
-    @apply ring-1 ring-secondary medium-15 bg-secondary px-7 py-[10px] text-white transition-all hover:bg-tertiary hover:ring-tertiary;
+    @apply ring-1 ring-black medium-15 bg-black px-7 py-[10px] text-white transition-all hover:bg-tertiary hover:ring-tertiary;
   }
   .btn-secondary-outline {
-    @apply ring-1 ring-secondary medium-15 bg-white px-7 py-[10px] text-secondary transition-all hover:bg-tertiary hover:ring-tertiary;
+    @apply ring-1 ring-black medium-15 bg-black px-7 py-[10px] text-black transition-all hover:bg-tertiary hover:ring-tertiary;
   }
 
   .max-container {

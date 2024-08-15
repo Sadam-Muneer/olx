@@ -8,24 +8,25 @@ import {
   FaLinkedin,
   FaYoutube,
 } from "react-icons/fa";
+import mainlogo from "../assets/olxlogo.png";
 
 const Footer = () => {
   return (
     <footer className="max-padd-container mb-4">
       <div className="max-padd-container bg-primary rounded-tr-3xl pt-12 xl:pt-20 pb-8">
-        <h3 className="h3">Discover Your Next Vehicle With Us!</h3>
-        <p className="">Find the best cars and deals with PakWheels</p>
+        <h3 className="h3">Explore a World of Listings with OLX!</h3>
+        <p className="">Find the best deals and items on OLX</p>
         <hr className="my-8 bg-slate-900/30 h-[2px]" />
         <div className="flex justify-between flex-wrap gap-x-4 gap-y-8">
           <div className="max-w-sm">
-            <Link to="/" className="flex items-center gap-x-2">
-              <span className="font-[900] text-[24px]">
-                Pak<span className="font-[600] medium-20">Wheels</span>
+            <Link to="/">
+              <span className="w-2">
+                <img src={mainlogo} width={"50px"} />
               </span>
             </Link>
             <p className="py-4">
-              Explore our listings and find your dream car today. Start your
-              journey to owning the perfect vehicle with us.
+              Discover a wide range of products and services with OLX. From cars
+              to electronics, find what you need today.
             </p>
           </div>
           <div className="flex justify-between flex-wrap gap-8">
@@ -58,55 +59,25 @@ const Footer = () => {
             <div className="flex">
               <FooterColumn title={SOCIALS.title}>
                 <ul className="flex gap-3 cursor-pointer">
-                  <li className="text-xl">
-                    <Link
-                      to="https://www.facebook.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaFacebook />
-                    </Link>
-                  </li>
-                  <li className="text-xl">
-                    <Link
-                      to="https://www.instagram.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaInstagram />
-                    </Link>
-                  </li>
-                  <li className="text-xl">
-                    <Link
-                      to="https://www.twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaTwitter />
-                    </Link>
-                  </li>
-                  <li className="text-xl">
-                    <Link
-                      to="https://www.linkedin.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaLinkedin />
-                    </Link>
-                  </li>
-                  <li className="text-xl">
-                    <Link
-                      to="https://www.youtube.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FaYoutube />
-                    </Link>
-                  </li>
+                  {SOCIALS.links.map((social) => (
+                    <li className="text-xl" key={social.id}>
+                      <Link
+                        to={social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {social.id === 1 && <FaFacebook />}
+                        {social.id === 2 && <FaInstagram />}
+                        {social.id === 3 && <FaTwitter />}
+                        {social.id === 4 && <FaLinkedin />}
+                        {social.id === 5 && <FaYoutube />}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
                 <Link
-                  className="btn-secondary rounded-full relative ring-[0.30rem]"
-                  to="mailto:info@pakwheels.com"
+                  className="text-white hover:text-white border border-white hover:bg-black focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:border-black dark:text-black dark:hover:text-white dark:hover:bg-black mt-2.5"
+                  to="mailto:sadammuneer390@gmail.com"
                 >
                   Contact via Email
                 </Link>
@@ -116,7 +87,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-white bg-tertiary medium-14 py-2 px-8 rounded-b-3xl flexBetween">
-        <span>2024 PakWheels</span>
+        <span>2024 OLX</span>
         All rights reserved
       </p>
     </footer>

@@ -45,7 +45,7 @@ const Blogs = () => {
               <div className="lg:w-1/2 px-4">
                 <div className="about-content">
                   <div className="section-title">
-                    <img src={icon} alt="icon-img" />
+                    <img src={icon} alt="icon-img w-full" />
                     <span
                       className=" font-semibold mt-4 block wow fadeInUp"
                       data-wow-delay=".2s"
@@ -56,7 +56,7 @@ const Blogs = () => {
                       className="text-3xl font-bold mt-4 wow fadeInUp"
                       data-wow-delay=".4s"
                     >
-                      Services with a Wide Range of Cars
+                      Services with a Wide Range of Product
                     </h2>
                   </div>
                   <h4
@@ -81,13 +81,12 @@ const Blogs = () => {
                       <li>Offering Low Prices</li>
                     </ul>
                   </div>
-                  <a
-                    href="#"
-                    className="inline-block mt-6 bg-secondary text-white py-2 px-4 rounded-lg hover:bg-black transition transform hover:scale-110 duration-300 ease-in-out wow fadeInUp animate-pulse"
-                    data-wow-delay=".8s"
+                  <button
+                    type="button"
+                    className="text-white hover:text-white border border-white hover:bg-black focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-black dark:text-black dark:hover:text-white dark:hover:bg-black mt-6"
                   >
-                    Discover More
-                  </a>
+                    Discover Now
+                  </button>
                 </div>
               </div>
             </div>

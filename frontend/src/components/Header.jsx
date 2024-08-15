@@ -5,6 +5,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 import userIcon from "../assets/user.svg";
 import { useAuth0 } from "@auth0/auth0-react";
 import ProfileMenu from "./ProfileMenu";
+import mainlogo from "../assets/olxlogo.png";
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -46,8 +47,8 @@ const Header = () => {
       >
         <div className="flexBetween py-3">
           <Link to="/">
-            <span className="font-[600] text-[24px]">
-              <span className="font-[600] medium-20">OLX</span>
+            <span className="w-2">
+              <img src={mainlogo} width={"50px"} />
             </span>
           </Link>
           <div className="flexCenter gap-x-4">

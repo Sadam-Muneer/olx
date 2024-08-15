@@ -6,13 +6,10 @@ import img3 from "../assets/image3.jpg";
 import img4 from "../assets/image4.jpg";
 import img5 from "../assets/image5.jpg";
 import image1 from "../assets/image1.jpg";
-import blog1 from "../assets/image2.jpg";
-import blog2 from "../assets/image4.jpg";
-import blog3 from "../assets/image3.jpg";
+import blog1 from "../assets/byke1.jpeg";
+import blog2 from "../assets/laptop1.jpeg";
+import blog3 from "../assets/watch.jpeg";
 import blog4 from "../assets/image5.jpg";
-import blogtwo from "../assets/image8.jpg";
-import blogthree from "../assets/image5.jpg";
-import blogfour from "../assets/image3.jpg";
 
 // Add unique ID and additional fields to each car
 export const CARS = [
@@ -194,58 +191,48 @@ export const getCar = (id) => {
 export const BLOGS = [
   {
     image: blog1,
-    title: "The Future of Electric Cars",
-    category: "Electric Vehicles",
+    title: "The Best Deals on Pre-Owned Byke in 2024",
+    category: "Byke",
   },
   {
-    image: blogtwo,
-    title: "Top 10 SUVs for 2024",
-    category: "SUVs",
+    image: blog2,
+    title: "Why Buying a Second-Hand Laptop is a Smart Choice",
+    category: "Laptops",
   },
   {
-    image: blogthree,
-    title: "Why Choose a Luxury Sedan?",
-    category: "Luxury Cars",
+    image: blog3,
+    title: "Top Tips for Buying a watch",
+    category: "Watch",
   },
   {
-    image: blogfour,
-    title: "The Best Sports Cars of the Year",
-    category: "Sports Cars",
+    image: blog4,
+    title: "How to Get the Best Price for Your Used Car",
+    category: "Cars",
   },
 ];
 
 export const FOOTER_LINK = [
   {
-    title: "Learn More",
-    links: [
-      "About Us",
-      "Latest Listings",
-      "Special Offers",
-      "Popular Cars",
-      "FAQ",
-      "Privacy Policy",
-    ],
+    title: "Explore More",
+    links: ["About Us", "Special Offers", "Privacy Policy"],
   },
   {
-    title: "Our Community",
-    links: ["Terms and Conditions", "Special Offers", "Customer Reviews"],
+    title: "Community",
+    links: ["Terms of Service", "Special Offers", "User Reviews"],
   },
 ];
 
 export const FOOTER_CONTACT_INFO = {
-  title: "Contact Info",
+  title: "Contact Us",
   links: [
-    { label: "Email", value: "info@pakwheels.com" },
-    { label: "Phone", value: "+923045678910" },
-    {
-      label: "Address",
-      value: "Office 12, PakWheels Plaza, Karachi",
-    },
+    { label: "Email", value: "sadammuneer@olx.com" },
+    { label: "Phone", value: "+923044561544" },
+    { label: "Address", value: "123 OLX Street, Multan, Pakistan" },
   ],
 };
 
 export const SOCIALS = {
-  title: "Socials",
+  title: "Follow Us",
   links: [
     { id: 1, url: "https://www.facebook.com" },
     { id: 2, url: "https://www.instagram.com" },

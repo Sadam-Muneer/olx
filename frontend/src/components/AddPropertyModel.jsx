@@ -13,14 +13,14 @@ const AddPropertyModel = ({ opened, setOpened }) => {
   const [productDetails, setProductDetails] = useState({
     title: "",
     description: "",
-    price: 0,
+    price: "",
     brand: "",
     model: "",
     features: {},
     image: "",
     listType: "",
     category: "",
-    additionalInfo: {},
+    additionalInfo: "",
     userId: "",
   });
 
@@ -51,10 +51,18 @@ const AddPropertyModel = ({ opened, setOpened }) => {
       opened={opened}
       onClose={() => setOpened(false)}
       closeOnClickOutside
-      size="90rem"
+      size="70rem"
+      centered
+      radius="lg"
+      styles={{
+        modal: {
+          borderRadius: "1rem",
+          border: "2px solid #ccc",
+        },
+      }}
     >
       {opened && (
-        <Container h="34rem" w="100%">
+        <Container h="35rem" w="100%">
           <Stepper
             active={activeStep}
             onStepClick={setActiveStep}

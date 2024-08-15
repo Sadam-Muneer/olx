@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Button, Group } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
 import { MdOutlineCloudUpload } from "react-icons/md";
+import { toast } from "react-toastify";
 
 const UploadImage = ({
   carDetails,
@@ -29,8 +30,10 @@ const UploadImage = ({
             ...prevDetails,
             image: result.info.secure_url,
           }));
+          toast.success("Image uploaded successfully!");
         } else if (error) {
           console.error("Image upload error:", error);
+          toast.error("Image upload failed. Please try again.");
         }
       }
     );
@@ -39,8 +42,10 @@ const UploadImage = ({
   const handleUploadClick = () => {
     widgetRef.current.open();
   };
+
   const handleSubmit = async () => {
     if (!imageURL) {
+      toast.error("No image URL available for submission");
       console.error("No image URL available for submission");
       return;
     }
@@ -65,13 +70,19 @@ const UploadImage = ({
 
       if (response.ok) {
         const data = await response.json();
-        console.log("Submission successful:", data);
-        setOpened(false); // Close the modal on successful submission
+        toast.success("Submission successful!");
+        setOpened(false);
       } else {
         const errorText = await response.text();
+        toast.error(
+          `Submission failed: ${errorText || "Unknown error occurred"}`
+        );
         console.error(`Error: ${errorText || "Unknown error occurred"}`);
       }
     } catch (error) {
+      toast.error(
+        `An error occurred while submitting the form: ${error.message}`
+      );
       console.error(
         `An error occurred while submitting the form: ${error.message}`
       );

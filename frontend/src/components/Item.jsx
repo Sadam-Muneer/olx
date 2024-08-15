@@ -12,9 +12,13 @@ const Item = ({ item }) => {
   const { title, description, price, image, listType, id } = item;
 
   return (
-    <div className="rounded-2xl p-3 bg-white">
+    <div className="rounded-2xl p-2 bg-white">
       <div className="pb-2 relative">
-        <img src={image} alt={title} className="rounded-xl" />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-60 object-cover rounded-xl"
+        />
       </div>
       <div className="flex justify-between items-center">
         <h4 className="medium-18 line-clamp-1">{title}</h4>
@@ -22,10 +26,10 @@ const Item = ({ item }) => {
       </div>
       <p className="pt-2 mb-4 line-clamp-2">{description}</p>
       <div className="flex justify-between items-center">
-        <div className="bold-20">${price}</div>
+        <div className="bold-16">${price}</div>
         <button
           onClick={() => navigate(`/listing/${id}`)}
-          className="btn-secondary rounded-xl !py-[7px] !px-5 shadow-sm"
+          className=" text-white hover:text-white border border-white hover:bg-black focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-black dark:text-black dark:hover:text-white dark:hover:bg-black mt-6"
         >
           View Details
         </button>
