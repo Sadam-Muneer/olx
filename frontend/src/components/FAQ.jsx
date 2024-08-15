@@ -4,24 +4,25 @@ const AgentsFAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const faqs = [
     {
-      question: "How do I find a car dealer?",
+      question: "How do I list an item for sale?",
       answer:
-        "You can find a car dealer by using our search feature on the homepage or browsing through the dealers' directory.",
+        "To list an item for sale, click on the 'Sell' button on the homepage, fill out the required details, and upload images of your item. Once submitted, your listing will be reviewed and published.",
     },
     {
-      question: "What qualifications do your dealers have?",
+      question: "How can I find items for sale near me?",
       answer:
-        "Our dealers are certified professionals with extensive experience, ensuring that you receive reliable and expert assistance.",
+        "You can find items for sale near you by using the search bar and applying location filters. Enter your city or region to see relevant listings in your area.",
     },
     {
-      question: "Can I contact a dealer directly?",
+      question:
+        "What should I do if I encounter a problem with a seller or buyer?",
       answer:
-        "Yes, you can contact any dealer directly via phone or WhatsApp using the information provided on their profile.",
+        "If you encounter any issues with a seller or buyer, you can report the issue through the platform's 'Report' feature. Our support team will review the report and take appropriate action.",
     },
     {
-      question: "How can I become a dealer?",
+      question: "How can I update or delete my listing?",
       answer:
-        "To become a dealer, you need to complete the application process on our website and meet the required qualifications.",
+        "To update or delete your listing, go to your account dashboard, find the listing you want to modify, and select the appropriate option to edit or delete it.",
     },
   ];
 
