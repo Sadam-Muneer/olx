@@ -9,12 +9,11 @@ const BasicDetails = ({
   prevStep,
   carDetails,
   setCarDetails,
-  setOpened,
   token,
+  nextStep,
 }) => {
   const navigate = useNavigate();
 
-  // Define the category and listType options
   const categoryOptions = [
     { value: "CAR", label: "Car" },
     { value: "MOBILE", label: "Mobile" },
@@ -55,30 +54,12 @@ const BasicDetails = ({
   });
 
   const handleSubmit = async (values) => {
-    try {
-      console.log("Submitting values:", values);
-      const response = await fetch("http://localhost:4000/api/product/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        navigate(`/listing/${data._id}`);
-        setOpened(false);
-      } else {
-        const errorText = await response.text();
-        toast.error(`Error: ${errorText || "Unknown error occurred"}`);
-      }
-    } catch (error) {
-      toast.error(
-        `An error occurred while submitting the form: ${error.message}`
-      );
-    }
+    // Store basic details in state but don't submit yet
+    setCarDetails((prevDetails) => ({
+      ...prevDetails,
+      ...values,
+    }));
+    nextStep(); // Move to next step
   };
 
   return (
@@ -153,7 +134,7 @@ const BasicDetails = ({
           <Button type="button" onClick={prevStep}>
             Back
           </Button>
-          <Button type="submit">Submit</Button>
+          <Button type="submit">Next</Button>
         </Group>
       </form>
       <ToastContainer />
@@ -174,8 +155,8 @@ BasicDetails.propTypes = {
     additionalInfo: PropTypes.string,
   }).isRequired,
   setCarDetails: PropTypes.func.isRequired,
-  setOpened: PropTypes.func.isRequired,
   token: PropTypes.string.isRequired,
+  nextStep: PropTypes.func.isRequired,
 };
 
 export default BasicDetails;

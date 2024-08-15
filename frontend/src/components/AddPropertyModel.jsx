@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
-import { Container, Modal, Stepper } from "@mantine/core";
 import { useState, useEffect } from "react";
+import { Modal, Container, Stepper } from "@mantine/core";
 import { useAuth0 } from "@auth0/auth0-react";
 import AddLocation from "./AddLocation";
 import UploadImage from "./UploadImage";
-
 import BasicDetails from "./BasicDetails";
 
 const AddPropertyModel = ({ opened, setOpened }) => {
@@ -55,50 +53,47 @@ const AddPropertyModel = ({ opened, setOpened }) => {
       closeOnClickOutside
       size="90rem"
     >
-      <Container h="34rem" w="100%">
-        <Stepper
-          active={activeStep}
-          onStepClick={setActiveStep}
-          allowNextStepsSelect={false}
-        >
-          <Stepper.Step label="Location" description="Address">
-            <AddLocation
-              carDetails={productDetails}
-              setCarDetails={setProductDetails}
-              nextStep={nextStep}
-            />
-          </Stepper.Step>
-
-          <Stepper.Step label="Upload Image" description="Verify Image">
-            <UploadImage
-              carDetails={productDetails}
-              setCarDetails={setProductDetails}
-              prevStep={prevStep}
-              nextStep={nextStep}
-            />
-          </Stepper.Step>
-
-          <Stepper.Step label="Basics" description="Details">
-            <BasicDetails
-              prevStep={prevStep}
-              nextStep={nextStep}
-              carDetails={productDetails}
-              setCarDetails={setProductDetails}
-            />
-          </Stepper.Step>
-
-          <Stepper.Completed>
-            {/* Add any completion content here if needed */}
-          </Stepper.Completed>
-        </Stepper>
-      </Container>
+      {opened && (
+        <Container h="34rem" w="100%">
+          <Stepper
+            active={activeStep}
+            onStepClick={setActiveStep}
+            allowNextStepsSelect={false}
+          >
+            <Stepper.Step
+              label="Basic Details"
+              description="Enter basic details"
+            >
+              <BasicDetails
+                carDetails={productDetails}
+                setCarDetails={setProductDetails}
+                nextStep={nextStep}
+                token={token}
+              />
+            </Stepper.Step>
+            <Stepper.Step label="Location" description="Address">
+              <AddLocation
+                carDetails={productDetails}
+                setCarDetails={setProductDetails}
+                nextStep={nextStep}
+                prevStep={prevStep}
+              />
+            </Stepper.Step>
+            <Stepper.Step label="Upload Image" description="Verify Image">
+              <UploadImage
+                carDetails={productDetails}
+                setCarDetails={setProductDetails}
+                prevStep={prevStep}
+                nextStep={nextStep}
+                token={token}
+                setOpened={setOpened}
+              />
+            </Stepper.Step>
+          </Stepper>
+        </Container>
+      )}
     </Modal>
   );
-};
-
-AddPropertyModel.propTypes = {
-  opened: PropTypes.bool.isRequired,
-  setOpened: PropTypes.func.isRequired,
 };
 
 export default AddPropertyModel;
