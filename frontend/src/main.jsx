@@ -18,10 +18,10 @@ const onRedirectCallback = (appState) => {
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Auth0Provider
-      domain="dev-pcwp2gensj50g46z.us.auth0.com"
-      clientId="nigBWA2lUGJOr76lRO25lQbMnxeXtIKc"
+      domain="dev-6lyosx3ek7jwoo4s.us.auth0.com"
+      clientId="Tci26sekKSRJ0HNTKj9tOmip3rKKBn5N"
       authorizationParams={{
-        redirect_uri: "http://localhost:5173/",
+        redirect_uri: "http://localhost:5173",
       }}
       onRedirectCallback={onRedirectCallback}
       cacheLocation="localstorage"

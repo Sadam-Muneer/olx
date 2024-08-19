@@ -25,7 +25,7 @@ const Layout = () => {
       await loginWithPopup();
       const token = await getAccessTokenWithPopup({
         authorizationParams: {
-          audience: "https://olx-frontend-opal.vercel.app",
+          audience: "http://localhost:4000",
           scope: "openid profile email",
         },
       });
