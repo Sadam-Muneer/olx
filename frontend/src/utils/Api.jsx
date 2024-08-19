@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: "https://olx-sap.vercel.app/api",
 });
 
 export const getAllCars = async () => {
