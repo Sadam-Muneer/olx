@@ -18,7 +18,7 @@ const Properties = () => {
     const fetchCars = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/product/allproducts"
+          "https://olx-sap.vercel.app/api/product/allproducts"
         );
         setCars(response.data);
       } catch (err) {
