@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(
-  cors({ origin: "https://olx-frontend-opal.vercel.app/", credentials: true })
+  cors({ origin: "https://olx-frontend-opal.vercel.app", credentials: true })
 );
 app.use(express.json());
 app.use(cookieParser());
