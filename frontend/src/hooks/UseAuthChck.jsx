@@ -9,7 +9,7 @@ const UseAuthChck = () => {
     try {
       console.log("Sending user details to backend:", user);
       const response = await axios.post(
-        "http://localhost:4000/api/user/register",
+        "https://olx-sap.vercel.app/api/user/register",
         {
           email: user.email,
           name: user.name,
