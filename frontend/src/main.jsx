@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain="dev-6lyosx3ek7jwoo4s.us.auth0.com"
       clientId="6gAKJljR9WfaDxlx6omN9dmV9kegaSsr"
       authorizationParams={{
-        redirect_uri: "https://dealx-frontend.vercel.app",
+        redirect_uri: "http://localhost:5173",
       }}
       onRedirectCallback={onRedirectCallback}
       cacheLocation="localstorage"
