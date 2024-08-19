@@ -60,7 +60,7 @@ export const createUser = async (email, token) => {
 
 export const createCar = async (carDetails, token) => {
   try {
-    const response = await api.post("/api/product/", carDetails, {
+    const response = await api.post("/product/", carDetails, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
