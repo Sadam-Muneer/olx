@@ -10,7 +10,6 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(
   cors({ origin: "https://olx-frontend-opal.vercel.app", credentials: true })
 );
