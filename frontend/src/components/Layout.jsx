@@ -25,7 +25,7 @@ const Layout = () => {
       const loginResult = await loginWithPopup();
       const token = await getAccessTokenWithPopup({
         authorizationParams: {
-          audience: "http://localhost:4000",
+          audience: "https://olx-frontend-opal.vercel.app",
           scope: "openid profile email",
         },
       });
@@ -56,7 +56,7 @@ const Layout = () => {
     if (isAddPropertiesPage && !isAuthenticated) {
       toast.info("Please login to add properties.", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 4000,
         onClose: () => handleLogin(), // Trigger login on toast close
       });
     }
