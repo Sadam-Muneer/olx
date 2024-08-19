@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       domain="dev-pcwp2gensj50g46z.us.auth0.com"
       clientId="nigBWA2lUGJOr76lRO25lQbMnxeXtIKc"
       authorizationParams={{
-        redirect_uri: "https://olx-frontend-opal.vercel.app/",
+        redirect_uri: "http://localhost:5173/",
       }}
       onRedirectCallback={onRedirectCallback}
       cacheLocation="localstorage"
