@@ -50,8 +50,7 @@ const UploadImage = ({
       return;
     }
 
-    // Ensure userEmail is included in carDetails
-    const userEmail = "user@example.com"; // Replace with actual user email
+    const userEmail = "user@example.com";
     const submissionDetails = {
       ...carDetails,
       image: imageURL,
@@ -59,7 +58,7 @@ const UploadImage = ({
     };
 
     try {
-      const response = await fetch("http://localhost:4000/api/product/", {
+      const response = await fetch("https://olx-sap.vercel.app/api/product/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
