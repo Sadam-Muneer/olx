@@ -35,7 +35,7 @@ const Layout = () => {
       setUserDetails((prev) => ({ ...prev, token }));
 
       if (isAuthenticated) {
-        console.log("User is authenticated, attempting to create user..");
+        console.log("User is authenticated, attempting to create user...");
         mutate(token);
         navigate(location.state?.from || "/", { replace: true });
       }
@@ -57,7 +57,7 @@ const Layout = () => {
       toast.info("Please login to add properties.", {
         position: "top-right",
         autoClose: 5000,
-        onClose: () => handleLogin(),
+        onClose: () => handleLogin(), // Trigger login on toast close
       });
     }
   }, [isAddPropertiesPage, isAuthenticated]);
