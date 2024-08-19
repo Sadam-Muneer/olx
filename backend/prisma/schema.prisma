@@ -14,9 +14,7 @@ model Product {
                     price          Float
                     brand          String
                     model          String
-                    features       Json
                     image          String
-                    listType       ListType
                     category       Category
                     additionalInfo Json
                     createdAt      DateTime @default(now())
@@ -26,6 +24,7 @@ model Product {
                     country        String
                     city           String
                     area           String
+                    contactNumber  String?
 
                     @@unique([title, userId])
 }
@@ -36,11 +35,6 @@ model User {
                     email    String    @unique
                     image    String?
                     products Product[] @relation(name: "UserProducts")
-}
-
-enum ListType {
-                    SELL
-                    BUY
 }
 
 enum Category {

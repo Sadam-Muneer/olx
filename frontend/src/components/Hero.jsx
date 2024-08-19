@@ -70,7 +70,7 @@ const Hero = () => {
               onClick={handleSearch}
               className="btn-secondary rounded-xl flexCenter !py-4 mt-6 w-full"
             >
-              Apply Filters
+              Search Product
             </button>
           </div>
         </div>

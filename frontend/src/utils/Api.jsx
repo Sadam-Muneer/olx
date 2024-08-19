@@ -1,5 +1,4 @@
 import axios from "axios";
-import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 const api = axios.create({
@@ -25,7 +24,7 @@ export const getAllCars = async () => {
 
 export const getCar = async (id) => {
   try {
-    const response = await api.get(`http://localhost:4000/api/product/${id}`, {
+    const response = await api.get(`/product/${id}`, {
       timeout: 10000,
     });
     if (response.status >= 400) {
@@ -61,15 +60,11 @@ export const createUser = async (email, token) => {
 
 export const createCar = async (carDetails, token) => {
   try {
-    const response = await api.post(
-      "http://localhost:4000/api/product/",
-      carDetails,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await api.post("/product/", carDetails, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     console.log("Product created:", response.data);
     return response.data;
   } catch (error) {

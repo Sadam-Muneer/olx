@@ -21,11 +21,6 @@ const BasicDetails = ({
     { value: "OTHER", label: "Other" },
   ];
 
-  const listTypeOptions = [
-    { value: "SELL", label: "For Sale" },
-    { value: "BUY", label: "For Buy" },
-  ];
-
   const modelOptions = Array.from({ length: 2025 - 1900 }, (_, i) => 1900 + i);
 
   const form = useForm({
@@ -35,9 +30,9 @@ const BasicDetails = ({
       price: carDetails.price,
       brand: carDetails.brand || "",
       model: carDetails.model || "",
-      listType: carDetails.listType || "",
       category: carDetails.category || "",
       additionalInfo: carDetails.additionalInfo || "",
+      contactNumber: carDetails.contactNumber || "",
     },
     validate: {
       title: (value) => (value ? null : "Title is required"),
@@ -46,20 +41,22 @@ const BasicDetails = ({
         value > 0 ? null : "Price is required and must be a positive number",
       brand: (value) => (value ? null : "Brand is required"),
       model: (value) => (value ? null : "Model is required"),
-      listType: (value) => (value ? null : "List Type is required"),
       category: (value) => (value ? null : "Category is required"),
       additionalInfo: (value) =>
         value.trim().length > 0 ? null : "Additional Info is required",
+      contactNumber: (value) =>
+        /^[0-9]{11}$/.test(value)
+          ? null
+          : "Contact Number is required and must be a 11-digit number",
     },
   });
 
   const handleSubmit = async (values) => {
-    // Store basic details in state but don't submit yet
     setCarDetails((prevDetails) => ({
       ...prevDetails,
       ...values,
     }));
-    nextStep(); // Move to next step
+    nextStep();
   };
 
   return (
@@ -126,32 +123,32 @@ const BasicDetails = ({
             <Select
               withAsterisk
               className="w-full mb-4"
-              label="List Type"
-              placeholder="Select list type"
-              data={listTypeOptions}
-              {...form.getInputProps("listType")}
-            />
-          </Box>
-        </Box>
-
-        <Box className="w-full flex flex-col lg:flex-row gap-4">
-          <Box className="w-full lg:w-1/2">
-            <Select
-              withAsterisk
-              className="w-full mb-4"
               label="Category"
               placeholder="Select category"
               data={categoryOptions}
               {...form.getInputProps("category")}
             />
           </Box>
+        </Box>
+
+        <Box className="w-full flex flex-col lg:flex-row gap-4">
           <Box className="w-full lg:w-1/2">
             <TextInput
               withAsterisk
               className="w-full mb-4"
-              label="Warranty in years"
-              placeholder="Warranty "
+              label="Additional Details"
+              placeholder="Additional Details"
               {...form.getInputProps("additionalInfo")}
+            />
+          </Box>
+          <Box className="w-full lg:w-1/2">
+            <TextInput
+              withAsterisk
+              className="w-full mb-4"
+              label="Contact Number"
+              placeholder="Contact Number"
+              type="text"
+              {...form.getInputProps("contactNumber")}
             />
           </Box>
         </Box>
@@ -182,9 +179,9 @@ BasicDetails.propTypes = {
     price: PropTypes.number,
     brand: PropTypes.string,
     model: PropTypes.string,
-    listType: PropTypes.string,
     category: PropTypes.string,
     additionalInfo: PropTypes.string,
+    contactNumber: PropTypes.string,
   }).isRequired,
   setCarDetails: PropTypes.func.isRequired,
   token: PropTypes.string.isRequired,

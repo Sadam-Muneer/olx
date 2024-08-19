@@ -8,26 +8,20 @@ export const createProduct = asyncHandler(async (req, res) => {
     price,
     brand,
     model,
-    features,
     image,
     userEmail,
-    listType,
     category,
     additionalInfo,
     country,
     city,
     area,
+    contactNumber,
   } = req.body;
 
   const validCategories = ["CAR", "MOBILE", "LAPTOP", "OTHER"];
-  const validListTypes = ["SELL", "BUY"];
 
   if (!category || !validCategories.includes(category)) {
     return res.status(400).json({ error: "Invalid category value." });
-  }
-
-  if (!listType || !validListTypes.includes(listType)) {
-    return res.status(400).json({ error: "Invalid listType value." });
   }
 
   try {
@@ -41,21 +35,6 @@ export const createProduct = asyncHandler(async (req, res) => {
       user = await prisma.user.create({ data: { email: userEmail } });
     }
 
-    const existingProduct = await prisma.product.findUnique({
-      where: {
-        title_userId: {
-          title,
-          userId: user.id,
-        },
-      },
-    });
-
-    if (existingProduct) {
-      return res.status(400).json({
-        error: "A product with this title already exists for the given user.",
-      });
-    }
-
     const product = await prisma.product.create({
       data: {
         title,
@@ -63,15 +42,14 @@ export const createProduct = asyncHandler(async (req, res) => {
         price: parseFloat(price),
         brand,
         model,
-        features,
         image,
-        listType,
         category,
         additionalInfo,
         user: { connect: { id: user.id } },
         country,
         city,
         area,
+        contactNumber: contactNumber || "",
       },
     });
 

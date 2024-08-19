@@ -16,7 +16,7 @@ const Property = () => {
         const response = await axios.get(
           `http://localhost:4000/api/product/${id}`
         );
-        console.log(response.data); // Log the data to verify structure
+        console.log(response.data);
         setCar(response.data);
       } catch (err) {
         console.error("Error fetching product data:", err);
@@ -40,15 +40,14 @@ const Property = () => {
     description,
     price,
     image,
-    listType,
     country,
     city,
     area,
     brand,
     model,
-    features,
     category,
     additionalInfo,
+    contactNumber,
   } = car;
   const fullAddress = `${area || ""}, ${city || ""}, ${country || ""}`;
 
@@ -103,22 +102,26 @@ const Property = () => {
         </div>
         <div className="flex flex-wrap gap-8 justify-between">
           <div className="flex flex-col">
-            <p className="text-lg font-semibold text-gray-800 mb-1">
-              Listing Type
-            </p>
-            <p className="text-base text-gray-600">{listType}</p>
+            <p className="text-lg font-semibold text-gray-800 mb-1">Location</p>
+            <p className="text-base text-gray-600">{fullAddress}</p>
           </div>
 
+          <div className="flex flex-col">
+            <p className="text-lg font-semibold text-gray-800 mb-1">
+              Contact Number
+            </p>
+            <a
+              href={`tel:${contactNumber}`}
+              className="text-base text-gray-600"
+            >
+              {contactNumber}
+            </a>
+          </div>
           <div className="flex flex-col">
             <p className="text-lg font-semibold text-gray-800 mb-1">
               Additional Details
             </p>
             <p className="text-base text-gray-600">{additionalInfo}</p>
-          </div>
-
-          <div className="flex flex-col">
-            <p className="text-lg font-semibold text-gray-800 mb-1">Location</p>
-            <p className="text-base text-gray-600">{fullAddress}</p>
           </div>
         </div>
       </div>

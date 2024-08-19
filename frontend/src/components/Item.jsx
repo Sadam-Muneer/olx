@@ -9,7 +9,7 @@ const Item = ({ item }) => {
     return <div>Loading...</div>;
   }
 
-  const { title, description, price, image, listType, id } = item;
+  const { title, description, price, image, id } = item;
 
   return (
     <div className="rounded-2xl p-2 bg-white">
@@ -22,7 +22,6 @@ const Item = ({ item }) => {
       </div>
       <div className="flex justify-between items-center">
         <h4 className="medium-18 line-clamp-1">{title}</h4>
-        <span className="bold-16 text-gray-500">{listType}</span>
       </div>
       <p className="pt-2 mb-4 line-clamp-2">{description}</p>
       <div className="flex justify-between items-center">
@@ -45,7 +44,6 @@ Item.propTypes = {
     description: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     image: PropTypes.string.isRequired,
-    listType: PropTypes.string.isRequired,
   }).isRequired,
 };
 
