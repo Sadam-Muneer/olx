@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import Item from "../components/Item";
 
@@ -6,13 +7,16 @@ import Item from "../components/Item";
 const categories = ["Mobile", "Laptop", "Car", "Others"];
 
 const Listing = () => {
-  const [items, setItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
-  const [filter, setFilter] = useState({
+  const location = useLocation();
+  const initialFilter = location.state?.filter || {
     category: "All",
     title: "",
     description: "",
-  });
+  };
+
+  const [items, setItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+  const [filter, setFilter] = useState(initialFilter);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -22,7 +26,7 @@ const Listing = () => {
         );
         if (Array.isArray(response.data)) {
           setItems(response.data);
-          applyFilters(response.data);
+          applyFilters(response.data, filter);
         } else {
           console.error("Unexpected data format:", response.data);
         }
@@ -35,10 +39,10 @@ const Listing = () => {
   }, []);
 
   useEffect(() => {
-    applyFilters(items);
+    applyFilters(items, filter);
   }, [filter, items]);
 
-  const applyFilters = (itemList) => {
+  const applyFilters = (itemList, filter) => {
     const { category, title, description } = filter;
 
     const filtered = itemList.filter((item) => {
