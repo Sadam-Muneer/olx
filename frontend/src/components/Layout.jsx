@@ -22,10 +22,10 @@ const Layout = () => {
 
   const handleLogin = async () => {
     try {
-      await loginWithPopup();
+      const loginResult = await loginWithPopup();
       const token = await getAccessTokenWithPopup({
         authorizationParams: {
-          audience: "http://localhost:8000",
+          audience: "http://localhost:4000",
           scope: "openid profile email",
         },
       });
@@ -34,10 +34,9 @@ const Layout = () => {
       localStorage.setItem("access_token", token);
       setUserDetails((prev) => ({ ...prev, token }));
 
-      if (isAuthenticated) {
+      if (loginResult && isAuthenticated) {
         console.log("User is authenticated, attempting to create user...");
         mutate(token);
-        // Navigate to the previous location after successful login
         navigate(location.state?.from || "/", { replace: true });
       }
     } catch (error) {
@@ -51,7 +50,6 @@ const Layout = () => {
     }
   }, [isAuthenticated, userDetails.token]);
 
-  // Function to check if the current path is the "Add Properties" page
   const isAddPropertiesPage = location.pathname === "/add-property";
 
   useEffect(() => {

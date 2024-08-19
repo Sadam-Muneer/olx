@@ -42,7 +42,6 @@ const UploadImage = ({
   const handleUploadClick = () => {
     widgetRef.current.open();
   };
-
   const handleSubmit = async () => {
     if (!imageURL) {
       toast.error("No image URL available for submission");
@@ -57,6 +56,8 @@ const UploadImage = ({
       userEmail: userEmail,
     };
 
+    console.log("Submission Details:", submissionDetails);
+
     try {
       const response = await fetch("https://olx-sap.vercel.app/api/product/", {
         method: "POST",
@@ -69,6 +70,7 @@ const UploadImage = ({
 
       if (response.ok) {
         const data = await response.json();
+        console.log("Response Data:", data);
         toast.success("Submission successful!");
         setOpened(false);
       } else {
