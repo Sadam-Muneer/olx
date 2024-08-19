@@ -1,7 +1,7 @@
 import { auth } from "express-oauth2-jwt-bearer";
 
 const jwtCheck = auth({
-  audience: "http://localhost:4000",
+  audience: "https://olx-frontend-opal.vercel.app",
   issuerBaseURL: "https://dev-pcwp2gensj50g46z.us.auth0.com/",
   tokenSigningAlg: "RS256",
   onVerificationError: (err, req, res, next) => {
