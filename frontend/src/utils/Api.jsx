@@ -46,11 +46,7 @@ export const createUser = async (email, token) => {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await api.post(
-      "https://dealx-olive.vercel.app/api/user/register",
-      { email },
-      config
-    );
+    const response = await api.post("/user/register", { email }, config);
     console.log("User created:", response.data.user);
     return response.data;
   } catch (error) {
@@ -64,15 +60,11 @@ export const createUser = async (email, token) => {
 
 export const createCar = async (carDetails, token) => {
   try {
-    const response = await api.post(
-      "https://dealx-olive.vercel.app/api/product/",
-      carDetails,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const response = await api.post("/api/product/", carDetails, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     console.log("Product created:", response.data);
     return response.data;
   } catch (error) {
