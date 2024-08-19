@@ -35,7 +35,7 @@ const Layout = () => {
       setUserDetails((prev) => ({ ...prev, token }));
 
       if (isAuthenticated) {
-        console.log("User is authenticated, attempting to create user...");
+        console.log("User is authenticated, attempting to create user..");
         mutate(token);
         navigate(location.state?.from || "/", { replace: true });
       }
