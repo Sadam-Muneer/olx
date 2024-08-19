@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const api = axios.create({
-  baseURL: "http://localhost:4000/api",
+  baseURL: "https://dealx-olive.vercel.app/api",
 });
 
 export const getAllCars = async () => {
@@ -47,7 +47,7 @@ export const createUser = async (email, token) => {
       },
     };
     const response = await api.post(
-      "http://localhost:4000/api/user/register",
+      "https://dealx-olive.vercel.app/api/user/register",
       { email },
       config
     );
@@ -65,7 +65,7 @@ export const createUser = async (email, token) => {
 export const createCar = async (carDetails, token) => {
   try {
     const response = await api.post(
-      "http://localhost:4000/api/product/",
+      "https://dealx-olive.vercel.app/api/product/",
       carDetails,
       {
         headers: {

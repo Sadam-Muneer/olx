@@ -14,7 +14,7 @@ const Property = () => {
     const fetchCar = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/product/${id}`
+          `https://dealx-olive.vercel.app/api/product/${id}`
         );
         console.log(response.data);
         setCar(response.data);

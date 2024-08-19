@@ -59,14 +59,17 @@ const UploadImage = ({
     console.log("Submission Details:", submissionDetails);
 
     try {
-      const response = await fetch("http://localhost:4000/api/product/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(submissionDetails),
-      });
+      const response = await fetch(
+        "https://dealx-olive.vercel.app/api/product/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(submissionDetails),
+        }
+      );
 
       if (response.ok) {
         const data = await response.json();
