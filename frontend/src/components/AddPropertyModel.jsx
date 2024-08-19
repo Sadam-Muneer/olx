@@ -10,15 +10,14 @@ const AddPropertyModel = ({ opened, setOpened }) => {
   const { user, isAuthenticated, getAccessTokenSilently } = useAuth0();
   const [token, setToken] = useState("");
 
+  // Updated productDetails state
   const [productDetails, setProductDetails] = useState({
     title: "",
     description: "",
     price: "",
     brand: "",
     model: "",
-    features: {},
     image: "",
-    listType: "",
     category: "",
     additionalInfo: "",
     userId: "",
