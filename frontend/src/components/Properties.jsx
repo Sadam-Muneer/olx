@@ -18,7 +18,7 @@ const Properties = () => {
     const fetchCars = async () => {
       try {
         const response = await axios.get(
-          "https://dealx-front.vercel.app/api/product/allproducts"
+          "https://dealx-olive.vercel.app/api/product/allproducts"
         );
         setCars(response.data);
       } catch (err) {
