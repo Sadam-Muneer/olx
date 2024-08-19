@@ -14,7 +14,7 @@ const Property = () => {
     const fetchCar = async () => {
       try {
         const response = await axios.get(
-          `https://olx-sap.vercel.app/api/product/${id}`
+          `http://localhost:4000/api/product/${id}`
         );
         console.log(response.data);
         setCar(response.data);
@@ -29,7 +29,12 @@ const Property = () => {
     fetchCar();
   }, [id]);
 
-  if (loading) return <div className="text-center p-4 text-lg">Loading...</div>;
+  if (loading)
+    return (
+      <div className="text-center p-4 text-lg max-padd-container">
+        Loading...
+      </div>
+    );
   if (error)
     return <div className="text-center p-4 text-red-500 text-lg">{error}</div>;
   if (!car)

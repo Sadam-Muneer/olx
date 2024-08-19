@@ -22,7 +22,7 @@ const Listing = () => {
     const fetchItems = async () => {
       try {
         const response = await axios.get(
-          "https://olx-sap.vercel.app/api/product/allproducts"
+          "http://localhost:4000/api/product/allproducts"
         );
         if (Array.isArray(response.data)) {
           setItems(response.data);

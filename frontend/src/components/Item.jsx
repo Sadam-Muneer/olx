@@ -6,7 +6,7 @@ const Item = ({ item }) => {
   const navigate = useNavigate();
 
   if (!item) {
-    return <div>Loading...</div>;
+    return <div className="max-padd-container">Loading...</div>;
   }
 
   const { title, description, price, image, id } = item;

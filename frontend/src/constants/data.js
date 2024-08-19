@@ -225,9 +225,9 @@ export const FOOTER_LINK = [
 export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
-    { label: "Email", value: "sadammuneer@olx.com" },
+    { label: "Email", value: "sadammuneer@gmail.com" },
     { label: "Phone", value: "+923044561544" },
-    { label: "Address", value: "123 OLX Street, Multan, Pakistan" },
+    { label: "Address", value: "123 DealX Street, Multan, Pakistan" },
   ],
 };
 

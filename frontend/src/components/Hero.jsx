@@ -24,7 +24,7 @@ const Hero = () => {
     <section className="max-padd-container pt-[120px]">
       <div className="max-padd-container bg-hero bg-center bg-cover bg-no-repeat h-[655px] w-full rounded-3xl">
         <div className="relative top-32 xs:top-20">
-          <span className="medium-18 text-white">Welcome to OLX</span>
+          <span className="medium-18 text-white">Welcome to DealX</span>
           <h1 className="h1 font-20 capitalize max-w-[30rem] text-white pt-10">
             Buy, Sell, and Discover Locally
           </h1>

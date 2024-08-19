@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <footer className="max-padd-container mb-4">
       <div className="max-padd-container bg-primary rounded-tr-3xl pt-12 xl:pt-20 pb-8">
-        <h3 className="h3">Explore a World of Listings with OLX!</h3>
-        <p className="">Find the best deals and items on OLX</p>
+        <h3 className="h3">Explore a World of Listings with DealX!</h3>
+        <p className="">Find the best deals and items on DealX</p>
         <hr className="my-8 bg-slate-900/30 h-[2px]" />
         <div className="flex justify-between flex-wrap gap-x-4 gap-y-8">
           <div className="max-w-sm">
@@ -25,8 +25,8 @@ const Footer = () => {
               </span>
             </Link>
             <p className="py-4">
-              Discover a wide range of products and services with OLX. From cars
-              to electronics, find what you need today.
+              Discover a wide range of products and services with DealX. From
+              cars to electronics, find what you need today.
             </p>
           </div>
           <div className="flex justify-between flex-wrap gap-8">
@@ -87,7 +87,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-white bg-tertiary medium-14 py-2 px-8 rounded-b-3xl flexBetween">
-        <span>2024 OLX</span>
+        <span>2024 DealX</span>
         All rights reserved
       </p>
     </footer>

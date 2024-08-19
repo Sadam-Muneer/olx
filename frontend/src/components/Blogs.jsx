@@ -85,7 +85,7 @@ const Blogs = () => {
                   <Link
                     to={"/listing"}
                     type="button"
-                    className="text-white hover:text-white border border-white hover:bg-black focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-black dark:text-black dark:hover:text-white dark:hover:bg-black mt-6"
+                    className="text-white hover:text-white border border-white hover:bg-black focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-3 dark:border-black dark:text-black dark:hover:text-white dark:hover:bg-black mt-6"
                   >
                     Discover Now
                   </Link>

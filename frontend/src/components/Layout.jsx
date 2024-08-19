@@ -37,7 +37,6 @@ const Layout = () => {
       if (isAuthenticated) {
         console.log("User is authenticated, attempting to create user...");
         mutate(token);
-        // Navigate to the previous location after successful login
         navigate(location.state?.from || "/", { replace: true });
       }
     } catch (error) {
@@ -51,7 +50,6 @@ const Layout = () => {
     }
   }, [isAuthenticated, userDetails.token]);
 
-  // Function to check if the current path is the "Add Properties" page
   const isAddPropertiesPage = location.pathname === "/add-property";
 
   useEffect(() => {
@@ -59,7 +57,7 @@ const Layout = () => {
       toast.info("Please login to add properties.", {
         position: "top-right",
         autoClose: 5000,
-        onClose: () => handleLogin(), // Trigger login on toast close
+        onClose: () => handleLogin(),
       });
     }
   }, [isAddPropertiesPage, isAuthenticated]);

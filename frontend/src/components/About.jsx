@@ -33,7 +33,7 @@ const About = () => {
         <div className="flex-1 relative mb-6 lg:mb-0 lg:mr-6">
           <img
             src={CarImage}
-            alt="OLX Marketplace"
+            alt="DealX Marketplace"
             className="rounded-xl wow fadeInUp w-full h-auto"
           />
           <div
@@ -45,20 +45,20 @@ const About = () => {
               <RiDoubleQuotesL className="font-2xl" />
             </span>
             <p className="text-center relative bottom-3 hidden lg:block">
-              Explore the world of buying and selling with OLX, where your next
-              great find is just a click away.
+              Explore the world of buying and selling with DealX, where your
+              next great find is just a click away.
             </p>
           </div>
         </div>
         <div className="flex flex-1 flex-col">
-          <span className="medium-18">Our Journey with OLX</span>
+          <span className="medium-18">Our Journey with DealX</span>
           <h2 className="h2">Connecting Buyers and Sellers Across the Globe</h2>
           <p className="py-5">
-            At OLX, we are dedicated to providing a platform that brings buyers
-            and sellers together, creating opportunities for everyone. Whether
-            you're looking to sell an item or find a great deal, our commitment
-            to simplicity and efficiency ensures a seamless experience every
-            time.
+            At DealX, we are dedicated to providing a platform that brings
+            buyers and sellers together, creating opportunities for everyone.
+            Whether you're looking to sell an item or find a great deal, our
+            commitment to simplicity and efficiency ensures a seamless
+            experience every time.
           </p>
           <div className="flex flex-wrap gap-4">
             {statistics.map((statistic, index) => (

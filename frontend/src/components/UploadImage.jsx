@@ -59,7 +59,7 @@ const UploadImage = ({
     console.log("Submission Details:", submissionDetails);
 
     try {
-      const response = await fetch("https://olx-sap.vercel.app/api/product/", {
+      const response = await fetch("http://localhost:4000/api/product/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
